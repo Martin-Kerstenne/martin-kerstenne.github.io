@@ -1,6 +1,5 @@
-/* Couleurs basées sur le document "Brown and Green" */
-
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 :root {
     --primary-green: #2d5a27;
     --dark-brown: #4a3728;
@@ -75,10 +74,10 @@ nav ul li a:hover {
     color: var(--primary-green);
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
     background: linear-gradient(rgba(45, 90, 39, 0.8), rgba(74, 55, 40, 0.8)), 
-                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80'); /* Image Tech/Gaming */
+                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80');
     background-size: cover;
     background-position: center;
     height: 80vh;
@@ -167,29 +166,27 @@ footer {
 }
 
 #portfolio {
-    font-family: 'Brush Script MT', cursive; /* Utilise la police manuscrite, sinon une cursive par défaut */
-    font-size: 3rem;                       /* Taille du titre */
-    color: var(--primary-green);           /* Utilise ton vert pour rester dans le thème */
+    font-family: 'Brush Script MT', cursive;
+    font-size: 3rem;
+    color: var(--primary-green);
     text-align: center;
     margin-top: 40px;
-    letter-spacing: 1px;                   /* Un léger espacement pour la lisibilité */
+    letter-spacing: 1px;
     font-weight: 700;
 }
 
-/* Conteneur principal pour aligner photo et texte */
 .hero-container {
     display: flex;
-    flex-direction: column; /* Aligne verticalement : photo au dessus du texte */
+    flex-direction: column;
     align-items: center;
     gap: 20px;
 }
 
-/* Style de la photo */
 .profile-pic-container {
     width: 180px;
     height: 180px;
-    border-radius: 50%; /* Rend la photo ronde */
-    border: 4px solid var(--primary-green); /* Rappel de ton vert */
+    border-radius: 50%;
+    border: 4px solid var(--primary-green);
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     background-color: white;
@@ -198,19 +195,16 @@ footer {
 .profile-pic {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Évite de déformer l'image */
+    object-fit: cover;
 }
 
-/* Ajustement de la section Hero pour le nouveau contenu */
 .hero {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Garde ton background actuel ici */
 }
 
-/* Version Mobile : réduit un peu la taille si besoin */
 @media (max-width: 600px) {
     .profile-pic-container {
         width: 130px;
@@ -219,10 +213,7 @@ footer {
     .hero h1 { font-size: 2.2rem; }
 }
 
-/* Conteneur global de la frise */
-
-/* La ligne horizontale multicolore */
-
+/* Timeline */
 .timeline-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -238,7 +229,6 @@ footer {
     text-align: center;
 }
 
-/* Style des cartes (forme flèche) */
 .card-box {
     background: #f1f4f9;
     padding: 20px;
@@ -249,7 +239,6 @@ footer {
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* Petit triangle pour l'effet pointe vers le bas */
 .card-box::after {
     content: '';
     position: absolute;
@@ -261,7 +250,6 @@ footer {
     border-top: 15px solid #f1f4f9;
 }
 
-/* Cercles d'icônes en haut */
 .icon-circle {
     width: 50px;
     height: 50px;
@@ -275,7 +263,6 @@ footer {
     font-size: 1.5rem;
 }
 
-/* Couleurs spécifiques du document */
 .blue-light { background-color: #1c8b06 !important; color: #1c8b06; }
 .green-light { background-color: #1c8b06 !important; color: #1c8b06; }
 .pink-light { background-color: #1c8b06 !important; color: #1c8b06; }
@@ -284,17 +271,15 @@ footer {
 .card-content p { font-size: 0.85rem; color: #555; }
 .card-content .sub { font-size: 0.8rem; margin-top: 5px; font-weight: bold; }
 
-/* Conteneur global */
 .timeline-wrapper {
     position: relative;
     padding: 60px 0;
     margin-top: 50px;
 }
 
-/* La ligne : on utilise "top" avec un pourcentage pour qu'elle ne bouge plus */
 .timeline-line {
     position: absolute;
-    top: 68%; /* Ajuste ce % si besoin pour centrer verticalement entre carte et date */
+    top: 68%;
     left: 0;
     width: 100%;
     height: 6px;
@@ -308,22 +293,20 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     position: relative;
-    z-index: 2; /* Pour que les points soient au-dessus de la ligne */
+    z-index: 2;
 }
 
-/* Les points (dots) */
 .dot {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    margin-bottom: 15px; /* Espace entre le point et la date */
+    margin-bottom: 15px;
     border: 4px solid white;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
     position: relative;
     z-index: 3;
 }
 
-/* On s'assure que l'item aligne bien tout au centre */
 .timeline-item {
     display: flex;
     flex-direction: column;
@@ -331,7 +314,6 @@ footer {
     text-align: center;
 }
 
-/* La date (year) */
 .year {
     font-weight: bold;
     font-size: 1.2rem;
@@ -346,55 +328,50 @@ footer {
     color: #333;
 }
 
-/* Responsive pour mobile (on repasse en vertical) */
 @media (max-width: 768px) {
     .timeline-grid { grid-template-columns: 1fr; gap: 50px; }
     .timeline-line { display: none; }
 }
 
-/* Style pour l'image à l'intérieur de l'encadré info */
 .project-illustration {
-    width: 100%;           /* Prend toute la largeur de l'encadré gris */
-    height: 180px;         /* Hauteur fixe pour l'uniformité */
-    object-fit: cover;     /* Recadre proprement l'image */
-    border-radius: 8px;    /* Petits bords arrondis pour coller au style */
-    margin-bottom: 15px;   /* Espace entre l'image et le titre h3 */
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
     display: block;
 }
 
-/* On s'assure que l'encadré info (le gris) a un bon padding */
 .project-info {
     padding: 20px;
-    background-color: #f8f9fa; /* Ton gris clair */
-    height: 100%;              /* Pour que toutes les cartes aient la même taille */
+    background-color: #f8f9fa;
+    height: 100%;
 }
 
-/* Optionnel : Supprime l'ancienne classe project-img si tu ne l'utilises plus */
 .project-img {
     display: none;
 }
-/* --- AJUSTEMENT SECTION ABOUT --- */
 
+/* About */
 .about-flex {
     display: flex;
-    align-items: center; /* Aligne verticalement la photo et le texte */
-    gap: 40px;           /* Espace entre la photo et le texte */
+    align-items: center;
+    gap: 40px;
     background: var(--light-beige);
     padding: 40px;
     border-radius: 15px;
 }
 
 .about-image {
-    flex: 0 0 200px;    /* La colonne de la photo ne s'écrase pas (200px de large) */
+    flex: 0 0 200px;
 }
 
 .about-text {
-    flex: 1;            /* Le texte prend tout le reste de l'espace */
+    flex: 1;
 }
 
-/* On réutilise ton style de photo existant mais on l'adapte un peu */
 .about-image .profile-pic-container {
-    width: 200px;       /* Un peu plus grand pour cette section */
+    width: 200px;
     height: 200px;
     border: 4px solid var(--primary-green);
     border-radius: 50%;
@@ -402,7 +379,6 @@ footer {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* Style de la citation à l'intérieur du texte */
 .about-quote {
     margin-top: 20px;
     font-family: 'Dancing Script', cursive;
@@ -412,16 +388,13 @@ footer {
     padding-left: 15px;
 }
 
-/* --- NETTOYAGE HERO SECTION --- */
-/* Comme tu as enlevé la photo du haut, on centre bien le texte restant */
 .hero-container {
     text-align: center;
 }
 
-/* --- RESPONSIVE (MOBILE) --- */
 @media (max-width: 768px) {
     .about-flex {
-        flex-direction: column; /* Photo au-dessus du texte sur téléphone */
+        flex-direction: column;
         text-align: center;
     }
     
