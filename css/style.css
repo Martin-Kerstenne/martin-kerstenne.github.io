@@ -1,0 +1,438 @@
+/* Couleurs basées sur le document "Brown and Green" */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+:root {
+    --primary-green: #2d5a27;
+    --dark-brown: #4a3728;
+    --accent-brown: #8c6a51;
+    --light-beige: #f4f1ea;
+    --white: #ffffff;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+/* Header */
+header {
+    background: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-brown);
+}
+
+.logo span {
+    color: var(--primary-green);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-green);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(45, 90, 39, 0.8), rgba(74, 55, 40, 0.8)), 
+                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80'); /* Image Tech/Gaming */
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-green);
+    color: var(--white);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: var(--dark-brown);
+}
+
+/* Sections */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--dark-brown);
+}
+
+.bg-light {
+    background-color: var(--light-beige);
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    border-top: 5px solid var(--primary-green);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.project-img {
+    height: 200px;
+    background-color: #ddd;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+footer {
+    background: var(--dark-brown);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 0;
+}
+
+#portfolio {
+    font-family: 'Brush Script MT', cursive; /* Utilise la police manuscrite, sinon une cursive par défaut */
+    font-size: 3rem;                       /* Taille du titre */
+    color: var(--primary-green);           /* Utilise ton vert pour rester dans le thème */
+    text-align: center;
+    margin-top: 40px;
+    letter-spacing: 1px;                   /* Un léger espacement pour la lisibilité */
+    font-weight: 700;
+}
+
+/* Conteneur principal pour aligner photo et texte */
+.hero-container {
+    display: flex;
+    flex-direction: column; /* Aligne verticalement : photo au dessus du texte */
+    align-items: center;
+    gap: 20px;
+}
+
+/* Style de la photo */
+.profile-pic-container {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Rend la photo ronde */
+    border: 4px solid var(--primary-green); /* Rappel de ton vert */
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    background-color: white;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Évite de déformer l'image */
+}
+
+/* Ajustement de la section Hero pour le nouveau contenu */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Garde ton background actuel ici */
+}
+
+/* Version Mobile : réduit un peu la taille si besoin */
+@media (max-width: 600px) {
+    .profile-pic-container {
+        width: 130px;
+        height: 130px;
+    }
+    .hero h1 { font-size: 2.2rem; }
+}
+
+/* Conteneur global de la frise */
+
+/* La ligne horizontale multicolore */
+
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Style des cartes (forme flèche) */
+.card-box {
+    background: #f1f4f9;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    margin-bottom: 40px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Petit triangle pour l'effet pointe vers le bas */
+.card-box::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #f1f4f9;
+}
+
+/* Cercles d'icônes en haut */
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -45px auto 15px auto;
+    border: 2px solid #71d93d;
+    background: white;
+    font-size: 1.5rem;
+}
+
+/* Couleurs spécifiques du document */
+.blue-light { background-color: #1c8b06 !important; color: #1c8b06; }
+.green-light { background-color: #1c8b06 !important; color: #1c8b06; }
+.pink-light { background-color: #1c8b06 !important; color: #1c8b06; }
+
+.card-content h3 { font-size: 1rem; margin-bottom: 10px; }
+.card-content p { font-size: 0.85rem; color: #555; }
+.card-content .sub { font-size: 0.8rem; margin-top: 5px; font-weight: bold; }
+
+/* Conteneur global */
+.timeline-wrapper {
+    position: relative;
+    padding: 60px 0;
+    margin-top: 50px;
+}
+
+/* La ligne : on utilise "top" avec un pourcentage pour qu'elle ne bouge plus */
+.timeline-line {
+    position: absolute;
+    top: 68%; /* Ajuste ce % si besoin pour centrer verticalement entre carte et date */
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, #71d93d 33%, #1c8b06 33%, #71d93d 33%, #71d93d 66%, #1c8b06 66%, #71d93d 33%);
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 2; /* Pour que les points soient au-dessus de la ligne */
+}
+
+/* Les points (dots) */
+.dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-bottom: 15px; /* Espace entre le point et la date */
+    border: 4px solid white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 3;
+}
+
+/* On s'assure que l'item aligne bien tout au centre */
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* La date (year) */
+.year {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--dark-brown);
+    display: block;
+    margin-top: 5px;
+}
+
+.year {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Responsive pour mobile (on repasse en vertical) */
+@media (max-width: 768px) {
+    .timeline-grid { grid-template-columns: 1fr; gap: 50px; }
+    .timeline-line { display: none; }
+}
+
+/* Style pour l'image à l'intérieur de l'encadré info */
+.project-illustration {
+    width: 100%;           /* Prend toute la largeur de l'encadré gris */
+    height: 180px;         /* Hauteur fixe pour l'uniformité */
+    object-fit: cover;     /* Recadre proprement l'image */
+    border-radius: 8px;    /* Petits bords arrondis pour coller au style */
+    margin-bottom: 15px;   /* Espace entre l'image et le titre h3 */
+    display: block;
+}
+
+/* On s'assure que l'encadré info (le gris) a un bon padding */
+.project-info {
+    padding: 20px;
+    background-color: #f8f9fa; /* Ton gris clair */
+    height: 100%;              /* Pour que toutes les cartes aient la même taille */
+}
+
+/* Optionnel : Supprime l'ancienne classe project-img si tu ne l'utilises plus */
+.project-img {
+    display: none;
+}
+/* --- AJUSTEMENT SECTION ABOUT --- */
+
+.about-flex {
+    display: flex;
+    align-items: center; /* Aligne verticalement la photo et le texte */
+    gap: 40px;           /* Espace entre la photo et le texte */
+    background: var(--light-beige);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.about-image {
+    flex: 0 0 200px;    /* La colonne de la photo ne s'écrase pas (200px de large) */
+}
+
+.about-text {
+    flex: 1;            /* Le texte prend tout le reste de l'espace */
+}
+
+/* On réutilise ton style de photo existant mais on l'adapte un peu */
+.about-image .profile-pic-container {
+    width: 200px;       /* Un peu plus grand pour cette section */
+    height: 200px;
+    border: 4px solid var(--primary-green);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Style de la citation à l'intérieur du texte */
+.about-quote {
+    margin-top: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--dark-brown);
+    border-left: 3px solid var(--primary-green);
+    padding-left: 15px;
+}
+
+/* --- NETTOYAGE HERO SECTION --- */
+/* Comme tu as enlevé la photo du haut, on centre bien le texte restant */
+.hero-container {
+    text-align: center;
+}
+
+/* --- RESPONSIVE (MOBILE) --- */
+@media (max-width: 768px) {
+    .about-flex {
+        flex-direction: column; /* Photo au-dessus du texte sur téléphone */
+        text-align: center;
+    }
+    
+    .about-image {
+        margin-bottom: 20px;
+    }
+
+    .about-quote {
+        border-left: none;
+        border-top: 3px solid var(--primary-green);
+        padding-top: 10px;
+        padding-left: 0;
+    }
+}
