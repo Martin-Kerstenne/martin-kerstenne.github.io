@@ -12,7 +12,8 @@
     <header>
         <nav>
             <div class="logo">Martin <span>KERSTENNE</span></div>
-            <ul>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">&#9776;</button>
+            <ul id="nav-links">
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#about">À propos de moi</a></li>
                 <li><a href="#parcours">Parcours</a></li>
@@ -181,6 +182,32 @@
     <footer>
         <p>&copy; 2026 Martin KERSTENNE - Portfolio</p>
     </footer>   
+
+    <script>
+        var menuToggle = document.getElementById("menu-toggle");
+        var navLinks = document.getElementById("nav-links");
+        var links = navLinks.getElementsByTagName("a");
+
+        function closeMenu() {
+            navLinks.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.innerHTML = "&#9776;";
+        }
+
+        menuToggle.addEventListener("click", function () {
+            var isOpen = navLinks.classList.toggle("open");
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            if (isOpen) {
+                menuToggle.innerHTML = "&#10005;";
+            } else {
+                menuToggle.innerHTML = "&#9776;";
+            }
+        });
+
+        for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener("click", closeMenu);
+        }
+    </script>
 
 </body>
 </html>
