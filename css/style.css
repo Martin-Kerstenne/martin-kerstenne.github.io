@@ -399,6 +399,78 @@ footer {
     display: none;
 }
 
+.projects-grid {
+    align-items: start;
+}
+
+.project-card {
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 26px rgba(0,0,0,0.15);
+}
+
+.project-card:focus-visible {
+    outline: 3px solid var(--primary-green);
+    outline-offset: 3px;
+}
+
+.project-card.open {
+    grid-column: 1 / -1;
+    transform: none;
+}
+
+.project-card.open .project-illustration {
+    height: 260px;
+}
+
+.project-info {
+    height: auto;
+}
+
+.project-hint {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+.project-hint::after {
+    content: " \25BE";
+}
+
+.project-card.open .project-hint::after {
+    content: " \25B4";
+}
+
+.project-details {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease;
+}
+
+.project-card.open .project-details {
+    grid-template-rows: 1fr;
+}
+
+.project-details-inner {
+    overflow: hidden;
+}
+
+.project-details-inner p {
+    padding-top: 12px;
+}
+
+.project-tags {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--accent-brown);
+}
+
 /* About */
 .about-flex {
     display: flex;

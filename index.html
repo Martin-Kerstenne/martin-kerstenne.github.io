@@ -133,30 +133,64 @@
     <section id="projets" class="container">
         <h2 class="section-title">Mes Projets</h2>
         <div class="projects-grid">
-            
-            
 
-            <div class="project-card">
+            <div class="project-card" role="button" tabindex="0" aria-expanded="false">
                 <div class="project-info">
                     <img src="img/algo.png" alt="algorithmes" class="project-illustration">
                     <h3>Algorithmes de tri</h3>
                     <p>Étude comparative en C++ des complexités de différents algorithmes de tri.</p>
+                    <span class="project-hint">Voir les détails</span>
+                    <div class="project-details">
+                        <div class="project-details-inner">
+                            <p>Implémentation en C++ de plusieurs algorithmes de tri, puis comparaison de leur complexité et de leur temps d'exécution selon la taille des données à trier.</p>
+                            <p class="project-tags">C++ · Algorithmique · Complexité</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" role="button" tabindex="0" aria-expanded="false">
                 <div class="project-info">
                     <img src="img/siteiut.png" alt="Aperçu site IUT" class="project-illustration">
                     <h3>Site Internet IUT</h3>
                     <p>Conception et développement d'un site vitrine complet pour le BUT Informatique d'Arles.</p>
+                    <span class="project-hint">Voir les détails</span>
+                    <div class="project-details">
+                        <div class="project-details-inner">
+                            <p>Création d'un site vitrine présentant le BUT Informatique d'Arles : structure des pages en HTML et mise en forme en CSS. Projet réalisé en groupe</p>
+                            <p class="project-tags">HTML · CSS · Conception web</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" role="button" tabindex="0" aria-expanded="false">
                 <div class="project-info">
                     <img src="img/biblio.png" alt="Bibliothèque C++" class="project-illustration">
                     <h3>Bibliothèque C++</h3>
-                    <p>Projet universitaire technique portant sur l'implémentation rigoureuse d'une bibliothèque de fonctions en C++.</p>
+                    <p>Projet universitaire technique portant sur l'implémentation rigoureuse d'une bibliothèque en C++.</p>
+                    <span class="project-hint">Voir les détails</span>
+                    <div class="project-details">
+                        <div class="project-details-inner">
+                            <p>Développement d'une bibliothèque en C++, avec une attention particulière portée à la rigueur du code et à son organisation.</p>
+                            <p class="project-tags">C++ · Programmation structurée</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" role="button" tabindex="0" aria-expanded="false">
+                <div class="project-info">
+                    <img src="img/modelisation_golem.png" alt="Modélisation 3D en amateur" class="project-illustration">
+                    <h3>Modélisation 3D en amateur</h3>
+                    <p>Projet personnel</p>
+                    <span class="project-hint">Voir les détails</span>
+                    <div class="project-details">
+                        <div class="project-details-inner">
+                            <p>Développement d'une bibliothèque en C++, avec une attention particulière portée à la rigueur du code et à son organisation.</p>
+                            <p class="project-tags">C++ · Programmation structurée</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -206,6 +240,29 @@
 
         for (var i = 0; i < links.length; i++) {
             links[i].addEventListener("click", closeMenu);
+        }
+
+        var projectCards = document.getElementsByClassName("project-card");
+
+        function toggleCard(card) {
+            var isOpen = card.classList.toggle("open");
+            card.setAttribute("aria-expanded", String(isOpen));
+        }
+
+        function setupCard(card) {
+            card.addEventListener("click", function () {
+                toggleCard(card);
+            });
+            card.addEventListener("keydown", function (event) {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    toggleCard(card);
+                }
+            });
+        }
+
+        for (var j = 0; j < projectCards.length; j++) {
+            setupCard(projectCards[j]);
         }
     </script>
 
