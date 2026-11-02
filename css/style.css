@@ -471,6 +471,16 @@ footer {
     color: var(--accent-brown);
 }
 
+.projects-more {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.projects-more .btn {
+    margin-top: 0;
+}
+
+
 /* About */
 .about-flex {
     display: flex;
