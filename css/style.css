@@ -548,3 +548,20 @@ footer {
         padding-left: 0;
     }
 }
+
+/* Contact - réseaux */
+.social-links {
+    margin-top: 20px;
+}
+
+.linkedin-link {
+    font-size: 2.5rem;
+    color: #0a66c2;
+    transition: transform 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.linkedin-link:hover {
+    color: var(--primary-green);
+    transform: scale(1.1);
+}
