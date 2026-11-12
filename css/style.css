@@ -140,6 +140,10 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
+.hero p {
+    font-size: 1.8rem;
+}
+
 .btn {
     display: inline-block;
     background: var(--primary-green);
